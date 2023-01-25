@@ -124,22 +124,43 @@ main .songButtons {
   transition: 0.5s;
 }
 
+.songButtons button:hover svg path {
+  fill: #fff;
+  transition: 0.5s;
+}
+
 .songButtons .forest:hover {
+  background-color: #A5BB26;
+}
+
+.songButtons .forestClicked {
   box-shadow: none;
   background-color: #A5BB26;
 }
 
 .songButtons .rain:hover {
+  background-color: #02799D;
+}
+
+.songButtons .rainClicked {
   box-shadow: none;
   background-color: #02799D;
 }
 
 .songButtons .coffeeShop:hover {
+  background-color: #a18262;
+}
+
+.songButtons .coffeeShopClicked {
   box-shadow: none;
   background-color: #a18262;
 }
 
 .songButtons .fireplace:hover {
+  background-color: #d25100;
+}
+
+.songButtons .fireplaceClicked {
   box-shadow: none;
   background-color: #d25100;
 }
