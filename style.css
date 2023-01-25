@@ -29,6 +29,9 @@
 
   /* Buttons size */
   --size-controls: clamp(3.6rem, 2.0rem + 5vw, 6.5rem);
+  --width-buttonsSongs: clamp(7.9rem, 5.0rem + 5vw, 12.9rem);
+  --height-buttonsSongs: clamp(8.7rem, 6.0rem + 5vw, 13.9rem);
+  --sizeIcons-buttonsSongs: clamp(3.0rem, 1.5rem + 5vw, 4.1rem);
 }
 
 body {
@@ -107,6 +110,8 @@ main .songButtons {
 .songButtons button {
   border: none;
   padding: 2.5rem;
+  width: var(--width-buttonsSongs);
+  height: var(--height-buttonsSongs);
   background-color: var(--bg-soundButons);
   border-radius: 2.4rem;
   box-shadow: 0rem .4rem .7rem rgba(0, 0, 0, 0.25);
@@ -141,7 +146,9 @@ main .songButtons {
 
 
 footer {
-  margin-top: 7.0rem;
+  /* position: absolute;
+  bottom: 5rem; */
+  padding: 7.0rem 3.0rem 0rem;
   text-align: center;
   font-family: var(--ff-general);
   text-transform: uppercase;
@@ -159,9 +166,25 @@ footer a:hover {
   color: #fff;
 }
 
+/* Media queries */
 
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    gap: 10.0rem;
+  }
+}
 
+@media (min-width: 1024px) {
+  main {
+    gap: 18.0rem;
+  }
 
+  .songButtons button svg {
+    transform: scale(1.3);
+  }
+
+}
 
 
 
