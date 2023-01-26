@@ -125,7 +125,6 @@ main .songButtons {
 }
 
 .songButtons .forest:hover {
-  box-shadow: none;
   background-color: #A5BB26;
 }
 
@@ -135,7 +134,6 @@ main .songButtons {
 }
 
 .songButtons .rain:hover {
-  box-shadow: none;
   background-color: #02799D;
 }
 
@@ -145,7 +143,6 @@ main .songButtons {
 }
 
 .songButtons .coffeeShop:hover {
-  box-shadow: none;
   background-color: #a18262;
 }
 
@@ -155,7 +152,6 @@ main .songButtons {
 }
 
 .songButtons .fireplace:hover {
-  box-shadow: none;
   background-color: #d25100;
 }
 
