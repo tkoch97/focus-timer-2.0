@@ -1,45 +1,48 @@
 import Sounds from "./sounds.js";
+import { Timer } from "./timer.js";
 
-const minutes = document.querySelector(".minutes");
-const seconds = document.querySelector(".seconds");
-const sounds = Sounds ();
+const minutesDisplay = document.querySelector(".minutes");
+const secondsDisplay = document.querySelector(".seconds");
 const controls = {
   play: document.querySelector(".play"),
   pause: document.querySelector(".pause"),
   stop: document.querySelector(".stop"),
-  SumFiveMinutes: document.querySelector(".sumFiveMinutes"),
-  SubFiveMinutes: document.querySelector(".subFiveMinutes"),
+  addMinute: document.querySelector(".addMinute"),
+  subMinute: document.querySelector(".subMinute"),
 }
-
 const buttonsSounds = {
   forest: document.querySelector(".forest"),
   rain: document.querySelector(".rain"),
   coffeeShop: document.querySelector(".coffeeShop"),
   fireplace: document.querySelector(".fireplace"),
 }
-
 const iconsButtonsSounds = {
   forest: document.querySelector(".songButtons .forest svg path"),
   rain: document.querySelector(".songButtons .rain svg path"),
   coffeeShop: document.querySelector(".songButtons .coffeeShop svg path"),
   fireplace: document.querySelector(".songButtons .fireplace svg path"),
 }
+const timer = Timer({minutesDisplay, secondsDisplay, controls});
+const sounds = Sounds ();
 
 controls.play.addEventListener('click', function () {
   controls.pause.classList.remove('hide');
   controls.play.classList.add('hide');
   sounds.pressButtonSound();
+  timer.secondsCountdown();
 });
 
 controls.pause.addEventListener('click', function () {
   controls.pause.classList.add('hide');
   controls.play.classList.remove('hide');
   sounds.pressButtonSound();
+  timer.hold();
 });
 
 controls.stop.addEventListener('click', function () {
-  controls.pause.classList.add('hide');
-  controls.play.classList.remove('hide');
+  timer.resetControls();
+  timer.updateDisplay(undefined, 0);
+  timer.hold();
   sounds.pressButtonSound();
 })
 
