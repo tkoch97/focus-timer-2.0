@@ -124,11 +124,6 @@ main .songButtons {
   transition: 0.5s;
 }
 
-.songButtons button:hover svg path {
-  fill: #fff;
-  transition: 0.5s;
-}
-
 .songButtons .forest:hover {
   background-color: #A5BB26;
 }
