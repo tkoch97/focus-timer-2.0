@@ -13,7 +13,17 @@ export const Timer = ({minutesDisplay, secondsDisplay, controls}) => {
     secondsDisplay.textContent = String(seconds).padStart(2, "0");
   }
   
-  const updateMinute = (minutes) => {minutesDisplay.textContent = String(minutes).padStart(2, "0")};
+  const updateMinute = minutes => minutesDisplay.textContent = String(minutes).padStart(2, "0");
+
+  const sumMinutes = () => {
+   let sumMinutes = Number(minutesDisplay.textContent) + numberControl;
+   updateMinute(sumMinutes);
+  }
+
+  const subMinutes = () => {
+    let subMinutes = Number(minutesDisplay.textContent) - numberControl;
+    updateMinute(subMinutes);
+  }
   
   const secondsCountdown = () => {
     timerTimeOut = setTimeout(function(){
@@ -22,7 +32,7 @@ export const Timer = ({minutesDisplay, secondsDisplay, controls}) => {
       let finished = newMinutes <=0 && seconds <=0;
   
       if (seconds <= 0) {
-        seconds = 10;
+        seconds = 60;
         --newMinutes
       }
   
@@ -52,6 +62,9 @@ export const Timer = ({minutesDisplay, secondsDisplay, controls}) => {
     secondsCountdown,
     resetControls,
     hold,
+    updateMinute,
+    sumMinutes,
+    subMinutes
   }
 
 }
